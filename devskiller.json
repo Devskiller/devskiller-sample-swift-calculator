@@ -1,0 +1,8 @@
+{"verification" : {
+    "testNamePatterns" : [".*VerifyTests.*"],
+    "pathPatterns" : ["**CalculatorTests/verify_pack**"],
+    "overwrite" : {
+            "CalculatorTests/verify_pack/project_verif": "Calculator.xcodeproj/project.pbxproj"
+        }
+}
+}
