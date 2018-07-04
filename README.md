@@ -66,10 +66,13 @@ Here is an example project descriptor:
 
 ```json
 {
-"verification" : {
-"testNamePatterns" : [".*verify_pack.*"],
-"pathPatterns" : ["**verify_pack**"]
-}
+  "verification": {
+    "testNamePatterns": [".*VerifyTests.*"],
+    "pathPatterns": ["**CalculatorTests/verify_pack**"],
+    "overwrite": {
+      "CalculatorTests/verify_pack/project_verif": "Calculator.xcodeproj/project.pbxproj"
+    }
+  }
 }
 ```
 
@@ -95,11 +98,11 @@ be deleted from candidates' projects and will be added to the projects during
 the verification phase. These files will not be visible to the candidate during
 the test.
 
-In our sample project all verification tests are in the `VerifyCalculatorTest`
-class and the class is located in file which names contains `verify_pack`. In
+In our sample project all verification tests are in the `CalculatorVerifyTests`
+class and the class is located in file which names contains `CalculatorTests/verify_pack`. In
 this case the following patterns will be sufficient:
 
 ```json
-"testNamePatterns" : [ ".*verify_pack.*" ],
-"pathPatterns" : [ "**verify_pack**" ]
+"testNamePatterns": [".*VerifyTests.*"],
+"pathPatterns": ["**CalculatorTests/verify_pack**"]
 ```
