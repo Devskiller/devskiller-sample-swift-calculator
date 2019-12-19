@@ -11,7 +11,6 @@
 		4DA0FE1920693C940073C7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1020693C930073C7C3 /* Assets.xcassets */; };
 		4DA0FE1A20693C940073C7C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1120693C930073C7C3 /* LaunchScreen.storyboard */; };
 		4DA0FE1B20693C940073C7C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1320693C930073C7C3 /* Main.storyboard */; };
-		4DA0FE1C20693C940073C7C3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1520693C930073C7C3 /* Info.plist */; };
 		4DA0FE1E20693C940073C7C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1820693C940073C7C3 /* AppDelegate.swift */; };
 		4DA0FE2020693CEC0073C7C3 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1F20693CEC0073C7C3 /* Calculator.swift */; };
 		4DA0FE2120693DA70073C7C3 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0FE1F20693CEC0073C7C3 /* Calculator.swift */; };
@@ -197,7 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DA0FE1C20693C940073C7C3 /* Info.plist in Resources */,
 				4DA0FE1B20693C940073C7C3 /* Main.storyboard in Resources */,
 				4DA0FE1920693C940073C7C3 /* Assets.xcassets in Resources */,
 				4DA0FE1A20693C940073C7C3 /* LaunchScreen.storyboard in Resources */,
