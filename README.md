@@ -31,7 +31,7 @@ programming task. We use **test** to execute unit tests.
 Your project will be executed with following command:
 
 ```sh
-xcodebuild -scheme Devskiller -destination 'platform=iOS Simulator,name=iPhone SE' clean test
+xcodebuild -scheme Devskiller -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max' clean test
 ```
 
 ## Automatic assessment
