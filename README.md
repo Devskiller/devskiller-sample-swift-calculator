@@ -33,6 +33,7 @@ Your project will be executed with following command:
 ```sh
 xcodebuild -scheme Devskiller -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max' clean test
 ```
+NOTE: Make sure that your Build Scheme is named `Devskiller`
 
 ## Automatic assessment
 
@@ -66,13 +67,14 @@ Here is an example project descriptor:
 
 ```json
 {
-  "verification": {
+    "readOnlyFiles" : ["Calculator.xcodeproj/project.pbxproj", "Calculator/Info.plist", "Calculator/CalculatorViewController.swift", "Calculator/SupportingFiles/AppDelegate.swift", "Calculator/SupportingFiles/LogoImageView.swift", "Calculator/SupportingFiles/SceneDelegate.swift"],
+    "verification": {
     "testNamePatterns": [".*VerifyTests.*"],
     "pathPatterns": ["**CalculatorTests/verify_pack**"],
     "overwrite": {
-      "CalculatorTests/verify_pack/project_verif": "Calculator.xcodeproj/project.pbxproj"
+            "CalculatorTests/verify_pack/project_verif": "Calculator.xcodeproj/project.pbxproj"
+        }
     }
-  }
 }
 ```
 
@@ -98,11 +100,21 @@ be deleted from candidates' projects and will be added to the projects during
 the verification phase. These files will not be visible to the candidate during
 the test.
 
-In our sample project all verification tests are in the `CalculatorVerifyTests`
-class and the class is located in file which names contains `CalculatorTests/verify_pack`. In
-this case the following patterns will be sufficient:
+In our sample project, all verification tests are in the `CalculatorVerifyTests`
+class and the class is located in a file which names contains `CalculatorTests/verify_pack`. In
+this case, the following patterns will be sufficient:
 
 ```json
 "testNamePatterns": [".*VerifyTests.*"],
 "pathPatterns": ["**CalculatorTests/verify_pack**"]
 ```
+When you create your verification tests, add them in a new folder (group). In our example, the folder is named 'verify_pack'. They will be used for candidate verification.
+Important note: For our system to automatically copy the verification tests, you need to save your project, including your verification in the project navigator and then go to finder and right-click on your xcodeproj file in this example `Calculator.xcodeproj` select show package contents and copy the `project.pbxproj` to your projects Tests and verify_pack folder in our case `CalculatorTests/verify_pack/`
+Once you have done, that get the file info and make sure you have unselected the hide_extension on the file inspector. Next, rename `project.pbxproj` to `project_verif` or any other name but make sure the part of devskiller.json, which you can see below, reflects that.
+
+```json
+"overwrite" : {
+    "CalculatorTests/verify_pack/project_verif": "Calculator.xcodeproj/project.pbxproj"
+  }
+```
+Finally, go back to Xcode and delete the `verify_pack` folder (group) from your project. Make sure that you select `Remove reference` and NOT Move to trash. Save your project, and it should be ready to upload to the Devskiller platform.
