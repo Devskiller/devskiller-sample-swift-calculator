@@ -28,6 +28,9 @@ projects](https://devskiller.zendesk.com/hc/en-us/articles/360019531059-Getting-
 Any project which uses **xcodebuild**  can be used as a
 programming task. We use **test** to execute unit tests.
 
+In the `.xcode-version` file you can define the XCode version to be used. 
+Available versions: `13.4.1` (default), `14.2`.
+
 Your project will be executed with following command:
 
 ```sh
